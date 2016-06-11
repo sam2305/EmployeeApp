@@ -1,0 +1,97 @@
+<div>
+	<div class="container">
+  		<h2>Enter Employee Details</h2>
+  		
+  		<form class="form-horizontal" role="form" name="empForm">
+    		
+    		<div class="form-group">
+    			<div class="col-sm-2"></div>
+      			<label class="control-label col-sm-3">Employee Number:</label>
+      			<div class="col-sm-4">
+        			<input name="emp_num" type="text" class="form-control box-shadow--8dp" ng-model=employee.emp_num placeholder="Employee Number" required>
+      				<span class="error" ng-show="empForm.emp_num.$touched && empForm.emp_num.$invalid">Employee number is required.</span>
+      			</div>
+     		</div>
+ 
+    		
+    		<div class="form-group">
+    			<div class="col-sm-2"></div>
+      			<label class="control-label col-sm-3">First Name:</label>
+      			<div class="col-sm-4">
+        			<input name="first_name" type="text" class="form-control box-shadow--8dp" ng-model=employee.first_name placeholder="First Name" required>
+      				<span class="error" ng-show="empForm.first_name.$touched && empForm.first_name.$invalid">First Name is required.</span>
+      			</div>
+     		</div>
+     		
+     	
+     		<div class="form-group">
+     			<div class="col-sm-2"></div>
+      			<label class="control-label col-sm-3">Last Name:</label>
+      			<div class="col-sm-4">
+        			<input name="last_name" type="text" class="form-control box-shadow--8dp" ng-model=employee.last_name placeholder="Last Name" required>
+      				<span class="error" ng-show="empForm.last_name.$touched && empForm.last_name.$invalid">Last Name is required.</span>
+      			</div>
+     		</div>
+     	
+     		
+     		<div class="form-group">
+     			<div class="col-sm-2"></div>
+      			<label class="control-label col-sm-3">Middle Name:</label>
+      			<div class="col-sm-4">
+        			<input type="text" class="form-control box-shadow--8dp" ng-model=employee.middle_name placeholder="Middle Name">
+      			</div>
+     		</div>
+     
+     		<div class="form-group">
+     			<div class="col-sm-2"></div>
+      			<label class="control-label col-sm-3">Age:</label>
+      			<div class="col-sm-4">
+        			<input name=age type="number" class="form-control box-shadow--8dp" ng-model=employee.age placeholder="Age" required>
+      				<span class="error" ng-show="empForm.age.$touched && empForm.age.$invalid">Age is required.</span>
+      			</div>
+     		</div>
+     		
+     
+     		<div class="form-group">
+     			<div class="col-sm-2"></div>
+      			<label class="control-label col-sm-3">Designation:</label>
+      			<div class="col-sm-3">
+        			<select class="box-shadow--8dp" name="designation" ng-model="employee.designation" required>
+        				 <option value="">---Please select---</option> <!-- not selected / blank option -->
+      					 <option value="Snr. Manager">Snr. Manager</option>
+      					 <option value="Manager">Manager</option>
+      					 <option value="Asst. Manager">Asst. Manager</option>
+      					 <option value="Lead">Lead</option>
+      					 <option value="Snr. Consultant">Snr. Consultant</option>
+      					 <option value="Consultant">Consultant</option>
+    				</select>
+      				<br><span class="error" ng-show="empForm.designation.$touched && empForm.designation.$invalid">Designation is required.</span>
+      			</div>
+     		</div>
+     		
+     
+     		<div class="form-group">
+     			<div class="col-sm-2"></div>
+      			<label class="control-label col-sm-3">Salary:</label>
+      			<div class="col-sm-4">
+        			<input name="salary" type="number" class="form-control box-shadow--8dp" ng-model=employee.salary placeholder="Salary" required>
+      				<span class="error" ng-show="empForm.salary.$touched && empForm.salary.$invalid">Salary is required.</span>
+      			</div>
+     		</div>
+     		
+    
+   		 	<div class="form-group">
+    			<div class="col-sm-4"></div>
+    			<div class="col-sm-8">	
+        			<button ng-disabled="empForm.$invalid " type="submit" ng-click="add()" class="btn btn-default">Submit</button>
+        			<button type="reset" ng-click="reset()" class="btn btn-default">Reset</button>
+        			<button type="button" ng-click="cancel()" class="btn btn-default">Cancel</button>
+    			</div>
+    		</div>
+ 	 	</form>
+ 	 	<div class="col-sm-4"></div>
+ 	 	<div>
+ 	 	<span class="error">{{error}}</span>
+ 	 	</div>	
+	</div>
+</div>

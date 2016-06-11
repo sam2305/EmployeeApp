@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>EmployeeApp</title>
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/main.css">
+<script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js">
+</script>
+<script src="http://code.angularjs.org/1.2.1/angular-route.min.js"></script>
+<script type="text/javascript">
+    window.history.forward();
+    function noBack() { window.history.forward(); }
+</script>
+</HEAD>
+<body onload="noBack();" onpageshow="if (event.persisted) noBack();" onunload="" ng-app="EmployeeApp" ng-controller="MainController">
+<div class="container" > 
+  <h2>Employee Details</h2>            
+  <table class="table table-hover table-responsive table-bordered box-shadow--8dp">
+    <thead>
+      <tr>
+        <th>Employee Number</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Designation</th>
+        <th>Salary</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="employee in employees" ng-click="setSelected($index)" ng-class="{'selected':$index == selectedRow}">
+        <td>{{employee.emp_num}}</td>
+        <td>{{employee.first_name}} {{employee.middle_name}} {{employee.last_name}}</td>
+        <td>{{employee.age}}</td>
+        <td>{{employee.designation}}</td>
+        <td>{{employee.salary}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>            
+<div class="container">
+	<div class="col-md-4"></div>
+	<div class="col-md-4 text-center">
+		<a href="#/add" class="btn btn-default box-shadow--8dp" ng-show="!isSelected">Add</a>
+		<a href="#/edit" class="btn btn-default box-shadow--8dp" ng-show="isSelected">Edit</a>
+		<a href="#/delete" class="btn btn-default box-shadow--8dp" ng-show="isSelected">Delete</a>
+	</div>
+</div>
+
+<div class="container-fluid" >
+	<div ng-view></div>
+</div>
+
+    <script src="/js/app.js"></script>
+    <script src="/js/scripts/disable.js"></script>
+    <script src="/js/controllers/AddController.js"></script>
+    <script src="/js/controllers/DeleteController.js"></script>
+    <script src="/js/controllers/EditController.js"></script>
+    <script src="/js/controllers/MainController.js"></script>
+    <script src="/js/services/empFactory.js"></script>
+    <script src="/js/services/share.js"></script>
+</body>
+</html>
