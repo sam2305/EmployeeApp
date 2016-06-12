@@ -1,8 +1,8 @@
-app.controller('DeleteController', ['$scope','empFactory','share', function($scope,empFactory,share) {
+app.controller('DeleteController', ['$scope','empFactory','share','$window',function($scope,empFactory,share,$window) {
 	$scope.employee=share.get()  
 	$scope.del=function(){
 		  empFactory.delEmp($scope.employee.emp_num).success(function(data) {
-			  empFactory.redirect()
+			  $window.location.href='/'
 		  });
 	  }
 	$scope.cancel=function(){
