@@ -27,7 +27,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr ng-repeat="employee in employees" ng-click="setSelected($index)" ng-class="{'selected':$index == selectedRow}">
+      <tr ng-repeat="employee in employees" ng-click=" setSelected($index)" ng-class="{'selected':$index == selectedrow}">
         <td>{{employee.emp_num}}</td>
         <td>{{employee.first_name}} {{employee.middle_name}} {{employee.last_name}}</td>
         <td>{{employee.age}}</td>
@@ -40,9 +40,9 @@
 <div class="container">
 	<div class="col-md-4"></div>
 	<div class="col-md-4 text-center">
-		<a href="#/add" class="btn btn-default box-shadow--8dp" ng-show="!isSelected">Add</a>
-		<a href="#/edit" class="btn btn-default box-shadow--8dp" ng-show="isSelected">Edit</a>
-		<a href="#/delete" class="btn btn-default box-shadow--8dp" ng-show="isSelected">Delete</a>
+		<a href="#/add" ng-click()="editMode()" class="btn btn-default box-shadow--8dp" ng-hide="isSelected">Add</a>
+		<a href="#/edit" ng-click()="editMode()" class="btn btn-default box-shadow--8dp" ng-hide="!isSelected">Edit</a>
+		<a href="#/delete" ng-click()="editMode()" class="btn btn-default box-shadow--8dp" ng-hide="!isSelected">Delete</a>
 	</div>
 </div>
 
