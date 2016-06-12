@@ -6,17 +6,17 @@ app.config(function ($routeProvider) {
 	    	reloadOnSearch:false
 	    })
 	    .when('/add', { 
-	      controller: 'AddController', 
+	      controller: 'FormController', 
 	      templateUrl: 'views/AddView.html',
 	      reloadOnSearch:false
 	    })
 	    .when('/edit', { 
-	      controller: 'EditController', 
+	      controller: 'FormController', 
 	      templateUrl: 'views/EditView.html',
 	      reloadOnSearch:false
 	    })
 	    .when('/delete', { 
-	      controller: 'DeleteController', 
+	      controller: 'FormController', 
 	      templateUrl: 'views/DeleteView.html',
 	      reloadOnSearch:false
 	    })
